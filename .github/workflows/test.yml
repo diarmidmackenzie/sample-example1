@@ -9,6 +9,7 @@ jobs:
         run: |
           git clone https://github.com/diarmidmackenzie/split-sub-directory
           cp -R split-sub-directory/examples/example1/* .
+          rm -r split-sub-directory
 
       - name: Push to Git
         run: |
