@@ -44,8 +44,8 @@ jobs:
           echo cp -R . ../.
           cp -R . ../.
           cd ..
-          echo rmdir split-sub-directory
-          rmdir split-sub-directory
+          echo rm -r split-sub-directory
+          rm -r split-sub-directory
 
       # Git operations
       - name: Git operations
