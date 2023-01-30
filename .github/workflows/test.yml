@@ -5,10 +5,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: |
-          date > generated.txt
+      - name: Pull latest version
+        run: |
+          git clone https://github.com/diarmidmackenzie/split-sub-directory
+          cp -R split-sub-directory/examples/example1/* .
+
+      - name: Push to Git
+        run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
-          git commit -m "generated"
+          git commit -m "Updated from latest code"
           git push
