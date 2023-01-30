@@ -29,12 +29,10 @@ jobs:
       - name: Check out main repo
         run: |
           git clone https://github.com/diarmidmackenzie/split-sub-directory
+          pwd
           cd split-sub-directory
+          pwd
 
-      - name: Setup tmate session
-        if: success() || failure()
-        uses: mxschmitt/action-tmate@v3
-        
       # Runs git-filter-repo to filter the repo.
       - name: Filter repo
         run: |
