@@ -31,6 +31,10 @@ jobs:
           git clone https://github.com/diarmidmackenzie/split-sub-directory
           cd split-sub-directory
 
+      - name: Setup tmate session
+        if: success() || failure()
+        uses: mxschmitt/action-tmate@v3
+        
       # Runs git-filter-repo to filter the repo.
       - name: Filter repo
         run: |
